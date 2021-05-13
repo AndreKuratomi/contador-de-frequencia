@@ -1,4 +1,5 @@
-const button = window.document.getElementById('countButton');
+const button1 = window.document.getElementById('countButton');
+const button2 = window.document.getElementById('reloadButton');
 
 const letters = window.document.getElementById("lettersDiv");
 const titleLetters = window.document.createElement('h4');
@@ -12,7 +13,7 @@ titleWords.innerText = "Contagem de palavras: "
 titleWords.id = "parola";
 words.appendChild(titleWords);
 
-button.addEventListener('click', function() {
+button1.addEventListener('click', function() {
     
     let typedText = window.document.getElementById('textInput').value;
     typedText = typedText.toLowerCase();
@@ -35,8 +36,8 @@ button.addEventListener('click', function() {
 
     for (let letter in letterCounts) {
         const span = window.document.createElement('span');
-        const textContent = `"${letter}": ${letterCounts[letter]}, `;
-        span.innerText = textContent;
+        const textContent = `<strong>"${letter}":</strong> ${letterCounts[letter]}, `;
+        span.innerHTML = textContent;
 
         const letters = window.document.getElementById("lettersDiv");
         // letters.className = "lettres";
@@ -64,8 +65,8 @@ button.addEventListener('click', function() {
 
     for (let word in wordCounts) {
         const span = window.document.createElement('span');
-        const textContent = `"${word}": ${wordCounts[word]}, `;
-        span.innerText = textContent;
+        const textContent = `<strong>"${word}":</strong>` + `${wordCounts[word]}, `;
+        span.innerHTML = textContent;
 
         const words = window.document.getElementById("wordsDiv");
         // words.className = "mots";
@@ -75,5 +76,13 @@ button.addEventListener('click', function() {
         words.appendChild(span);
     }
 
-    button.style.display = "none";
+    button1.style.display = "none";
+
+    button2.style.display = "block";
+});
+
+button2.addEventListener('click', function () {
+
+    location.reload();
+
 });
