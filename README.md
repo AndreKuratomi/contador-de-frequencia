@@ -10,6 +10,9 @@
 # Descrição
 
 <p><b>Contador de frequência</b> é uma aplicação simples que contabiliza o número de letras e palavras digitadas no textarea pelo usuário. Esta aplicação utiliza HTML5, CSS3, DOM e a linguagem Javascript</p>
+
+<p>Link gitlab:</p>
+https://abkura.gitlab.io/contadordefrequencia/
 <br>
 
 # Instalação
